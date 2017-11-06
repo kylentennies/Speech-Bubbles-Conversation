@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            
+    <style>
+    .speech-bubblep1
+    {
+        background-color: rgb(128, 187, 235);
+        border: 1px solid #c8c8c8;
+        border-radius: 5px;
+        width: 200px;
+        text-align: center;
+        padding: 20px;
+        float:left;
+        clear:right;
+        border-radius: 25px;
+        position:relative;
+        margin-top: 10px;
+        
+    }
+    .speech-bubblep2
+    {
+        background-color: #c72b81;
+        border: 1px solid #c8c8c8;
+        border-radius: 5px;
+        width: 200px;
+        text-align: center;
+        padding: 20px;
+        float:right;
+        clear:left;
+        border-radius: 25px;
+        position:relative;
+        margin-top: 10px;
+        
+    }
+    .arrow-left
+    {
+        position:absolute;
+        bottom: -7px;
+        left:0px;
+        border-right: 30px solid transparent;
+        border-top: 30px solid rgb(128, 187, 235);
+    
+    }
+    .arrow-right 
+    {
+       
+        position:absolute;
+        bottom: -7px;
+        right:0px;
+        border-left: 30px solid transparent;
+        border-top: 30px solid #c72b81;
+      
+    }
+    body
+    {
+        padding-top: 8%;
+        width:40%;
+        padding-left:30%;
+        padding-right:30%;
+       
+    }
+    .bigbody
+    {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding:10%;
+    }
+    .textbox
+    {
+        width: 80%;
+    }
+    .button1
+    {
+        float:left;
+        background-color: rgb(128, 187, 235);
+        border-radius: 25px;
+        padding: 10px;
+        border: 1px solid #c8c8c8;
+        border-radius: 5px;
+    }
+    .button2
+    {
+        float:right;
+        background-color: #c72b81;
+        border-radius: 25px;
+        padding: 10px;
+        border: 1px solid #c8c8c8;
+        border-radius: 5px;
+    }
+    .nomorefloat {
+        clear: both;
+        padding-top: 100px;
+    }
+    </style>
+    <script>
+    words = () => 
+    {
+        wordsTheyType = document.getElementById("textbox").value;
+    }
+    person1SendIt = () =>
+    {
+        words();
+        document.getElementById("chatbox").innerHTML += `<div class="speech-bubblep1"><div class="arrow-left"></div>${wordsTheyType}</div>`
+    }
+    person2SendIt = () =>
+    {
+        words();
+        document.getElementById("chatbox").innerHTML += `<div class="speech-bubblep2"><div class="arrow-right"></div>${wordsTheyType}</div>`
+    }
+    
+    </script>
+    </head>
+    <body><center>
+        <div class ="bigbody"><div id = "chatbox">
+        <br>
+            <div class="speech-bubblep1" >
+                <div class="arrow-left"></div>
+                    I love dogs.
+                </div>
+
+            <div class="speech-bubblep2">
+                <div class="arrow-right"></div>
+                    I love cats.
+                </div>
+            <div class="speech-bubblep1">
+                <div class="arrow-left"></div>
+                    I love hedgehogs.
+                </div>
+        
+            <div class="speech-bubblep2">
+                <div class="arrow-right"></div>
+                    I love lizards.
+                </div>
+        </div>
+        <div class="nomorefloat">
+    <button class = "button1" onclick="person1SendIt()">Person 1</button>          
+    <input type="text" class="textboxClass" id="textbox" width: 400px/>
+    <button class = "button2" onclick="person2SendIt()">Person 2</button>
+</div>
+    </div>
+</center></body>
+</html>
